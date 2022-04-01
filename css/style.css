@@ -1,4 +1,108 @@
+/* Xe chở hàng cart */
+.count {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  display: inline-flex;
+  top: 0;
+  right: 20%;
+  background-color: #5a6a6a;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  border-radius: 300px;
+  transition: all ease 0.25s;
+  z-index: 1;
+}
+.shopping_cart {
+ background-color: rgb(1,1,1);
+  position: absolute;
+  top:100%;
+  right: 20px;
+  width: 200%;
+  min-height: 432px;
+  display:none;
+}
+.shopping_cart:after {
+	bottom: 100%;
+	left: 89%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: rgb(1,1,1);
+	border-width: 10px;
+	margin-left: -8px;
+}
+.shopping_cart::before{
+  content: "";
+  opacity: 0;
+  background-color: whitesmoke;
+  width: 98%;
+  height: 7%;
+  position: absolute;
+  top: -29px;
+  left: 20px;
+}
+.cart:hover > .shopping_cart {
+  display: block;
+}
+.shopping_cart_detail {
+  color: black;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+.shopping_cart h4 {
+  font-family: 'Fantasy', Times, serif;
+  padding: 4px;
+  line-height:35px;
+  font-size: 19px;
+  background: #626be9;
+  border-radius: 30px;
+}
+.shopping_cart b {
+  color: #626be9;
+  font-size: 17px;
+  line-height: 25px;
+}
+#shopping_cart_buying {
+  padding-top: 10px;
+  min-height: 350px;
+  background-color: #444;
+  color: #cccc;
+  text-align: center;
+  font-size:20px;
+}
+.shopping_cart button {
+  color: white;
+  background-color: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 40%;
+  padding: 8px;
+  margin: 4px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+.shopping_cart button:hover {
+  color: black;
+  box-shadow: inset 15em 0 0 0 white;
+}
 
+
+/* cho menu đứng im */
+.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+/* Áp dụng cho toàn bố cục web */
 * {
   padding: 0;
   margin: 0;
@@ -6,6 +110,7 @@
   scroll-behavior: smooth;
   font-family: Helvetica, sans-serif;
 }
+/* thanh thông báo nhỏ ở trên cùng */
 .alert {
   background-color: #6a5af9;
   color: wheat;
@@ -15,7 +120,7 @@
   text-align: center;
 }
 body {
-  background: whitesmoke;
+  background: #cccccc6e;
 }
 
 header {
@@ -52,8 +157,8 @@ header {
   background-color: #cccc;
   position: absolute;
   right: -33px;
-  top: -43% ;
-  transform: translateX(-50%) ;
+  top: -43%;
+  transform: translateX(-50%);
 }
 
 ul li {
@@ -74,12 +179,11 @@ li:hover {
   background-color: #cc0000;
   cursor: pointer;
 }
-#menu>ul>li:hover>a {
+#menu > ul > li:hover > a {
   color: black;
 }
-ul li:hover>a {
+ul li:hover > a {
   color: white;
-  
 }
 /* MENU CẤP 1 */
 #menu li ul {
@@ -88,7 +192,7 @@ ul li:hover>a {
   border-top: 1px solid black;
 }
 
-#menu li ul li{
+#menu li ul li {
   border-bottom: 1px solid #ccc;
   width: 95%;
   margin: 5px auto;
@@ -102,7 +206,7 @@ ul li ul.sub-menu {
   top: 180%;
 }
 .sub-menu a {
-  color: black ;
+  color: black;
 }
 .sub-menu::before {
   content: "";
@@ -163,7 +267,6 @@ li > a:only-child:after {
   content: "";
 }
 
-
 #users {
   width: 20%;
   font-size: 30px;
@@ -182,13 +285,13 @@ icon {
   color: #00e1ff;
 }
 /* Thanh tim kiem */
-.timKiem:hover .thanh_Search {
-  display: block;
+icon:hover .thanh_Search {
+  display: block !important;
 }
 .thanh_Search {
   position: absolute;
   width: 490px;
-  background-color: aquamarine;
+  background-color: #5a6a6a;
   top: 100%;
   right: 44%;
   border-radius: 8px;
@@ -207,17 +310,17 @@ icon {
 .thanh_Search i {
   vertical-align: middle;
   top: 9px;
-  right: 29px;
-  border: 2px solid #6a5af9;
-  padding: 3.5px;
+  right: 28px;
+  border:none;
+  padding: 5px;
   position: absolute;
   color: aqua;
   width: 10%;
   border-radius: 8px;
 }
 .thanh_Search i:hover {
-  background-color: #cccccc6e;
-  transition: all 0.6s linear;
+  background-color: #6b9e9e;
+  transition: all 0.4s linear;
 }
 .input_search > input {
   border: none;
@@ -230,7 +333,6 @@ icon {
 }
 .input_search > input:focus {
   background-color: white;
-  box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px black;
   border-radius: 8px;
   outline: none;
 }
@@ -239,14 +341,17 @@ icon {
 .thanh_Search::before {
   content: "";
   position: absolute;
-  top: -30px;
+  top: -20px;
   right: 14%;
-  border-width: 15px;
+  border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent aquamarine transparent;
+  border-color: transparent transparent #5a6a6a transparent;
 }
 
 /* BANNER ( JS ) */
+.banner {
+  padding-top: 85px;
+}
 .banner > img {
   width: 100%;
   padding: 25px 5px;
@@ -256,7 +361,7 @@ icon {
   position: absolute;
   font-size: 38px;
   left: 44%;
-  top: 63%;
+  top: 60%;
   text-shadow: 1px 1px 4px #00e1ff;
 }
 
@@ -270,19 +375,19 @@ icon {
   justify-content: space-around;
   padding: 12px;
 }
-.danhmuc-list>a>img {
+.danhmuc-list > a > img {
   margin-top: 4px;
   border-radius: 10px;
   width: 70%;
   margin-left: 28px;
   background-color: white;
 }
-.danhmuc-list>a>img:hover {
+.danhmuc-list > a > img:hover {
   transition: all 0.6s ease-in;
   transform: scale(1.2);
 }
 /* Mục thay đổi ảnh quảng cáo */
-.quangcao-1{
+.quangcao-1 {
   width: 100%;
   margin: 10%;
 }
@@ -325,26 +430,26 @@ main {
   transition: all 0.6s linear;
 }
 .sanPham:hover {
-  box-shadow:rgba(0, 0, 0, 0.24) 0 0 8px 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 0 8px 3px;
 }
-.sanPham>img {
+.sanPham > img {
   width: 100%;
   margin-bottom: 20px;
 }
-.sanPham:hover>img {
+.sanPham:hover > img {
   transition: all 0.5s linear;
   transform: scale(1.05);
-} 
+}
 hr {
   margin-bottom: 5px;
 }
-.sanPham>b {
+.sanPham > b {
   cursor: pointer;
   color: #2f39d0;
   font-size: large;
   transition: 800ms;
 }
-.sanPham>b:hover {
+.sanPham > b:hover {
   color: #171929;
 }
 .sanPham button {
@@ -359,8 +464,9 @@ hr {
   border-radius: 0 6px 6px 0;
   border: none;
   outline: none;
+  cursor: pointer;
 }
-.sanPham button::before{
+.sanPham button::before {
   content: "";
   width: 2.5px;
   height: 100%;
@@ -405,13 +511,18 @@ button:hover {
 }
 /* GHI CHÚ */
 .box-ghi-chu {
+  background: url("https://png.pngtree.com/background/20210711/original/pngtree-mobile-phone-digital-poster-banner-background-material-picture-image_1101575.jpg");
+  background-size: cover;
+  background-position: 100% -180px;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
   padding: 15px;
   margin: 10px auto;
+  color: white;
 }
 .box-ghi-chu .icon {
+  color: white;
   font-size: 50px;
 }
 /* FOOTER */
@@ -421,7 +532,7 @@ footer {
   text-align: center;
   background-color: #cc0000;
   color: wheat;
-} 
+}
 /* Nút di chuyển lên web */
 #TOP {
   color: #626be9;
@@ -429,10 +540,16 @@ footer {
   right: 13px;
   bottom: 0;
   font-size: 50px;
+  transition: all 0.5s ease-out;
 }
-
 /* Nơi đang ở */
 .active {
   color: black;
   font-weight: bold;
+}
+
+
+/* footer */
+footer > b {
+  color: aqua;
 }

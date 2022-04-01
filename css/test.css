@@ -1,1 +1,85 @@
 /* Nơi để test CSS trước khi bỏ vào style chính */
+
+/* cart */
+tbody {
+  padding: 5px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid whitesmoke;
+  overflow-y: visible;
+}
+
+table {
+  display: flex;
+}
+
+table tr {
+  margin:2px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  align-items: center;
+}
+
+table td {
+  z-index: 0;
+  color: white;
+  font-size: 16.5px;
+  width: 20%;
+}
+
+table img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.Xoa {
+  margin-right: -50px;
+  padding: 10px;
+  color: white;
+  background-color: #eb5757;
+  border: none;
+  border-radius: 0.3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Xoa:hover {
+  background-color: #f18c5d;
+}
+
+.soLuong {
+  z-index: 1;
+  border-radius: 10px;
+  /* border: 2px solid #56ccf2; */
+  background-color: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 24%;
+  margin-right: -50px;
+}
+
+table:last-child {
+  border-bottom: 1px solid black;
+}
+
+table:last-child .cart-column {
+  border: none;
+}
+.HienSo {
+  line-height: 53px;
+  text-align: center;
+}
+.Giam {
+  width: 33% !important;
+  margin-top: 90px;
+  margin-right: 173px;
+}
+.Tang {
+  width: 33% !important;
+  margin-top: 90px;
+  margin-right: 108px;
+}
