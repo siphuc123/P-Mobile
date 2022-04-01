@@ -11,8 +11,9 @@
     <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
     <!-- CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/test.css"> -->
+    <link rel="stylesheet" href="css/test.css">
     <!-- JScript -->
     <script type="text/javascript" src="js/asm.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -21,60 +22,87 @@
 
 <body>
     <a name="top"></a>
-    <div class="alert">
-        <span>Do dịch covid nên khi mua hàng online có thể giao hàng sẽ trễ từ 2 đến 3 ngày, Chúng tôi xin lỗi vì sự bất
-            tiện này !!</span>
-    </div>
-    <header>
-        <div id="logo" style="width:15%; margin-left: 1%;">
-            <a href="index.html"><img src="img/logo.png" alt="" width="60">
-                <b>Mobile</b></a>
+    <div class="fixed">
+        <div class="alert">
+            <span>Do dịch covid nên khi mua hàng online có thể giao hàng sẽ trễ từ 2 đến 3 ngày, Chúng tôi xin lỗi vì sự
+                bất
+                tiện này !!</span>
         </div>
-        <div id="menu" style="width: 66%;">
-            <ul>
-                <li class="border"><a href="" class="active">Trang chủ</a></li>
-                <li class="border"><a href="">Sản phẩm mới</a>
-                    <ul class="sub-menu ">
-                        <li><a href="">Iphone</a>
-                            <ul>
-                                <li><a href=""> Iphone 13</a>
-                                </li>
-                                <li><a href=""> Iphone 12</a>
-                                    <ul style="margin-left: 91%; margin-top: -16%;" id="sub_sub_menu">
-                                        <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i> Iphone
-                                                12 Mini</a></li>
-                                        <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i> Iphone
-                                                12 Pro</a></li>
-                                        <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i> Iphone
-                                                12 Pro Max</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="">Samsung</a></li>
-                        <li><a href="">Huawei</a></li>
-                        <li><a href="">OPPO</a></li>
-                        <li><a href="" style="margin-left: 45%;">...</a></li>
-                    </ul>
-                </li>
-                <li class="border"><a href="">Thông tin hay</a></li>
-                <li class="border"><a href="">Chăm sóc khách hàng</a></li>
-                <li><a href="">Liên hệ</a></li>
-            </ul>
-        </div>
-        <div id="users">
-            <icon href="" class="timKiem"><i class='bx bx-search-alt '></i>
-                <div class="thanh_Search">
-                    <div class="input_search">
-                        <input type="text" id="input" placeholder=" Nhập thông tin muốn tìm...">
-                        <a href=""><i class='bx bx-search-alt'></i></a>
+        <header>
+            <div id="logo" style="width:15%; margin-left: 1%;">
+                <a href="index.html"><img src="img/logo.png" alt="" width="60">
+                    <b>Mobile</b></a>
+            </div>
+            <div id="menu" style="width: 66%;">
+                <ul>
+                    <li class="border"><a href="" class="active">Trang chủ</a></li>
+                    <li class="border"><a href="">Sản phẩm mới</a>
+                        <ul class="sub-menu ">
+                            <li><a href="">Iphone</a>
+                                <ul>
+                                    <li><a href=""> Iphone 13</a>
+                                    </li>
+                                    <li><a href=""> Iphone 12</a>
+                                        <ul style="margin-left: 91%; margin-top: -16%;" id="sub_sub_menu">
+                                            <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i>
+                                                    Iphone
+                                                    12 Mini</a></li>
+                                            <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i>
+                                                    Iphone
+                                                    12 Pro</a></li>
+                                            <li><a href=""><i class='bx bx-right-arrow-alt bx-fade-right-hover'></i>
+                                                    Iphone
+                                                    12 Pro Max</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="">Samsung</a></li>
+                            <li><a href="">Huawei</a></li>
+                            <li><a href="">OPPO</a></li>
+                            <li><a href="" style="margin-left: 45%;">...</a></li>
+                        </ul>
+                    </li>
+                    <li class="border"><a href="">Thông tin hay</a></li>
+                    <li class="border"><a href="">Chăm sóc khách hàng</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div id="users">
+                <!-- Icon thanh tìm kiếm -->
+                <icon href=""><i class='bx bx-search-alt'></i>
+                    <!-- Thanh để tìm kiếm -->
+                    <div class="thanh_Search">
+                        <div class="input_search">
+                            <input type="text" id="input" placeholder=" Nhập thông tin muốn tìm...">
+                            <a href=""><i class='bx bx-search-alt'></i></a>
+                        </div>
                     </div>
-                </div>
-            </icon>
-            <a href=""><i class='bx bxs-user-circle'></i></a>
-            <a href=""><i class='bx bxs-cart'></i></a>
-        </div>
-    </header>
+                </icon>
+                <!-- Icon người dùng -->
+                <a href=""><i class='bx bxs-user-circle'></i></a>
+                <!-- Icon giỏ hàng -->
+                <icon class="cart xeHang">
+                    <a href=""><i class='bx bxs-cart'></i></a>
+                    <span class="count">0</span>
+                    <!-- Giỏ hàng -->
+                    <div class="shopping_cart">
+                        <div class="shopping_cart_detail">
+                            <h4>Giỏ Hàng của bạn 🛒</h4>
+                            <b>Tổng tiền: <span id="shopping_cart_total">0</span> ₫</b>
+                        </div>
+                        <div id="shopping_cart_buying">
+                            Có vẻ như bạn chưa mua gì ... 🤷🏻‍♂️
+                        </div>
+                        <div id="muaHang" class="button">
+                            <button class="shopping_cart_icon"> Mua ngay 💳</button>
+                            <button class="shopping_cart_icon"> Clear 🗑</button>
+                        </div>
+                    </div>
+                </icon>
+            </div>
+        </header>
+    </div>
     <div class="banner">
         <img src="img/banner1.png" alt="" id="slide">
         <script type="text/javascript">
@@ -88,6 +116,7 @@
         </div>
     </div>
     <main>
+        <!-- Danh mục chọn hãng sản phẩm -->
         <div class="danhmuc">
             <div class="danhmuc-list">
                 <a class="danhmuc-item" href=""><img src="img/hang/iphone.png" alt=""></a>
@@ -100,9 +129,11 @@
                 <a class="danhmuc-item" href=""><img src="img/hang/Vsmart.png" alt=""></a>
             </div>
         </div>
+        <!-- Sale,quảng cáo,... -->
         <a href="" class="quangcao-1"><img src="" alt=""></a>
         <a href="" class="quangcao-1"><img src="img/hang/alert1.png" alt=""></a>
         </div>
+        <!-- Thanh tiêu đề vào nội dung chính -->
         <div class="title">
             <b class="hot" data-aos="fade-left"> 🔥 Săn sale cực cháy 🔥</b>
             <div class="line" data-aos="fade-up"></div>
@@ -119,11 +150,10 @@
                     <div class="small_sale">0 ngày 22:14</div>
                     <span class="product_sale" style="text-decoration: line-through;">33.990.000 ₫</span>
                 </div>
-                <div class="button">
-                    <button class="Buy"> Mua ngay</button>
-                    <button class="Test"> So sánh</button>
-                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/1.png','iPhone 13 Pro Max',30490000,'A')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
             </div>
+
             <div class="sanPham" data-aos="fade-left">
                 <img src="img/moblie/4.png" alt="">
                 <hr>
@@ -133,11 +163,10 @@
                     <div class="small_sale">2 ngày 12:14</div>
                     <span class="product_sale" style="text-decoration: line-through;">16.990.000 ₫</span>
                 </div>
-                <div class="button">
-                    <button class="Buy"> Mua ngay</button>
-                    <button class="Test"> So sánh</button>
-                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/4.png','iPhone 11',13490000,'B')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
             </div>
+
             <div class="sanPham" data-aos="fade-left">
                 <img src="img/moblie/2.png" alt="">
                 <hr>
@@ -147,11 +176,10 @@
                     <div class="small_sale">Trả góp chỉ từ</div>
                     <span class="product_sale"><b>3.110.000 ₫</b>/tháng</span>
                 </div>
-                <div class="button">
-                    <button class="Buy"> Mua ngay</button>
-                    <button class="Test"> So sánh</button>
-                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/2.png','Samsung Galaxy S22 Ultra',30990000,'C')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
             </div>
+
             <div class="sanPham" data-aos="fade-left">
                 <img src="img/moblie/3.png" alt="">
                 <hr>
@@ -161,10 +189,8 @@
                     <div class="small_sale">Trả góp chỉ từ</div>
                     <span class="product_sale"><b>1.411.000 ₫</b>/tháng</span>
                 </div>
-                <div class="button">
-                    <button class="Buy"> Mua ngay</button>
-                    <button class="Test"> So sánh</button>
-                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/3.png','OPPO Reno7 Z 5G 8GB',10490000,'D')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
             </div>
 
         </div>
@@ -189,12 +215,17 @@
     </div>
     <!-- Footer -->
     <footer>
+        Bây giờ là:
+        <span id="time" style="color:aquamarine; font-weight:bold;">
+            <script> time(); </script>
+        </span>
+        <br>
         Make by <b>Nguyen Phuc</b>, Student ID: <b>PS20362</b> <br />
         Assignment Web1403 của năm 2022
     </footer>
 
     <!-- Chức năng phụ trợ -->
-    <a href="#top" id="TOP"><i class='bx bxs-caret-up-square'></i></a>
+    <a href="#top" id="TOP" data-aos="zoom-in-up"><i class='bx bxs-caret-up-square'></i></a>
     <script>
         AOS.init();
     </script>
