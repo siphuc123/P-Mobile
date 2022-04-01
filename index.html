@@ -96,7 +96,7 @@
                         </div>
                         <div id="muaHang" class="button">
                             <button class="shopping_cart_icon"> Mua ngay 💳</button>
-                            <button class="shopping_cart_icon"> Clear 🗑</button>
+                            <button class="shopping_cart_icon" onclick="Clear()"> Clear 🗑</button>
                         </div>
                     </div>
                 </icon>
@@ -194,7 +194,84 @@
             </div>
 
         </div>
+
+        <!-- Thanh tiêu đề vào nội dung 2 -->
+        <div class="title">
+            <b class="hot" data-aos="fade-left"> 🖤 4 Phụ kiện Hot Nhất 🖤</b>
+            <div class="line" data-aos="fade-up"></div>
+        </div>
+        <!-- Sản phẩm Phụ kiện -->
+        <div class="product">
+
+            <div class="sanPham" data-aos="fade-left">
+                <img src="img/moblie/1.png" alt="">
+                <hr>
+                <b class="product_name">iPhone 13 Pro Max</b>
+                <div class="donGia">
+                    <span class="product_price">30.490.000 ₫</span>
+                    <div class="small_sale">0 ngày 22:14</div>
+                    <span class="product_sale" style="text-decoration: line-through;">33.990.000 ₫</span>
+                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/1.png','iPhone 13 Pro Max',30490000,'A')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
+            </div>
+
+            <div class="sanPham" data-aos="fade-left">
+                <img src="img/moblie/4.png" alt="">
+                <hr>
+                <b class="product_name">iPhone 11</b>
+                <div class="donGia">
+                    <span class="product_price">13.490.000 ₫</span>
+                    <div class="small_sale">2 ngày 12:14</div>
+                    <span class="product_sale" style="text-decoration: line-through;">16.990.000 ₫</span>
+                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/4.png','iPhone 11',13490000,'B')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
+            </div>
+
+            <div class="sanPham" data-aos="fade-left">
+                <img src="img/moblie/2.png" alt="">
+                <hr>
+                <b class="product_name">Samsung Galaxy S22 Ultra</b>
+                <div class="donGia">
+                    <span class="product_price">30.990.000 ₫</span>
+                    <div class="small_sale">Trả góp chỉ từ</div>
+                    <span class="product_sale"><b>3.110.000 ₫</b>/tháng</span>
+                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/2.png','Samsung Galaxy S22 Ultra',30990000,'C')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
+            </div>
+
+            <div class="sanPham" data-aos="fade-left">
+                <img src="img/moblie/3.png" alt="">
+                <hr>
+                <b class="product_name">OPPO Reno7 Z 5G 8GB</b>
+                <div class="donGia">
+                    <span class="product_price">10.490.000 ₫</span>
+                    <div class="small_sale">Trả góp chỉ từ</div>
+                    <span class="product_sale"><b>1.411.000 ₫</b>/tháng</span>
+                </div>
+                <button class="mua" onclick="themMatHang('img/moblie/3.png','OPPO Reno7 Z 5G 8GB',10490000,'D')"> Mua ngay</button>
+                <button class="Test"> So sánh</button>
+            </div>
+
+        </div>
     </main>
+    <!-- Box thông báo -->
+    <div class="modal">
+        <div class="tatThongBao">
+            <button onclick="dongCuaSo()"><span>Close</span>
+            <i class='bx bx-x bx-sm'></i>
+            </button>
+        </div>
+        <div class="width-100% max-width-xxxs padding-sm bg radius-md shadow-md overflow-auto">
+            <div class="text-component text-sm">
+              <h2 id="alert-msg-title" class="text-md">Thông báo ❗❗</h2>
+              <p id="alert-msg-descr" class="color-contrast-medium">Sản phẩm này đã có trong giỏ hàng rồi.</p>
+            </div>
+          </div>
+        </div>
+    </div>
     <!-- Ghi chú sale -->
     <div class="box-ghi-chu">
         <div class="ghichu">

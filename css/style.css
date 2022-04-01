@@ -108,7 +108,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica, sans-serif';
 }
 /* thanh thông báo nhỏ ở trên cùng */
 .alert {

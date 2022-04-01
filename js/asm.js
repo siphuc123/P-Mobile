@@ -81,6 +81,7 @@ var ItemsArr = new Array();
 
 function themMatHang(hinh, ten, gia, loai) {
   var check = true;
+  var count = 0;
   // Kiểm tra đã có hàng trong giỏ hàng chưa
   for (var i = 0; i < ItemsArr.length; i++) {
     if (loai == ItemsArr[i].loai) check = false;
@@ -88,17 +89,27 @@ function themMatHang(hinh, ten, gia, loai) {
   // Nếu có thì thêm mặt hàng vào giỏ hàng
   if (check == true) {
     ItemsArr.push(new Items(hinh, ten, gia, loai));
+    document.querySelector(".count").innerHTML++;
   } else {
-    for (var i = 0; i < ItemsArr.length; i++) {
-      if (loai == ItemsArr[i].loai) {
-        if (ItemsArr[i].soLuong < 99) {
-          ItemsArr[i].soLuong++;
-          ItemsArr[i].TongGia = parseInt(ItemsArr[i].gia) * ItemsArr[i].soLuong;
-        }
-      }
-    }
+    // thông báo bình thường
+    //  alert("Đã có trong giỏ hàng rồi !")
+    document.querySelector(".modal").style.visibility = "visible";
+    document.querySelector(".modal").style.animation =
+      "fade_right 0.6s alternate ease-in";
+
+    // Ở dưới là trường hợp bấm vào mua hàng số lượng sẽ tăng
+    // for (var i = 0; i < ItemsArr.length; i++) {
+    //   if (loai == ItemsArr[i].loai) {
+    //     if (ItemsArr[i].soLuong < 99) {
+    //       ItemsArr[i].soLuong++;
+    //       ItemsArr[i].TongGia = parseInt(ItemsArr[i].gia) * ItemsArr[i].soLuong;
+    //     }
+    //   }
+    // }
   }
+
   document.getElementById("shopping_cart_buying").innerHTML = "";
+
   // Xuất
   for (var i = 0; i < ItemsArr.length; i++) {
     document.getElementById("shopping_cart_buying").innerHTML +=
@@ -215,6 +226,7 @@ function soLuongGiam(items) {
 function Xoa(obj) {
   for (var i = 0; i < ItemsArr.length; i++) {
     if (obj == ItemsArr[i].ten) {
+      document.querySelector(".count").innerHTML--;
       ItemsArr.splice(i, 1); // Xóa 1 phần tử trong mảng
     }
   }
@@ -247,4 +259,28 @@ function Xoa(obj) {
     parseInt(TongTien)
   );
   TongTien = 0;
+  if(ItemsArr.length === 0) {
+    document.getElementById("shopping_cart_buying").innerHTML =
+    "Có vẻ như bạn chưa mua gì ... 🤷🏻‍♂️";
+  }
+}
+
+// Nút Clear tất cả
+function Clear() {
+  for (var i = 0; i < ItemsArr.length; i++) {
+    ItemsArr.splice(i);
+  }
+  document.querySelector(".count").innerHTML = 0;
+  document.getElementById("shopping_cart_buying").innerHTML =
+    "Có vẻ như bạn chưa mua gì ... 🤷🏻‍♂️";
+  document.getElementById("shopping_cart_total").innerHTML = 0;
+}
+
+// Tắt thông báo
+
+function dongCuaSo() {
+  document.querySelector(".modal").style.visibility = "hidden";
+  document.querySelector(".modal").style.animation =
+  "close 1s alternate ease-out";
+  // document.querySelector(".modal").style.display = "none";
 }

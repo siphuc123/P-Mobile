@@ -6,8 +6,7 @@ tbody {
   width: 100%;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid whitesmoke;
-  overflow-y: visible;
+  border-bottom: 1px solid #5a6a9f;
 }
 
 table {
@@ -15,7 +14,7 @@ table {
 }
 
 table tr {
-  margin:2px;
+  margin: 2px;
   padding: 2px;
   display: flex;
   justify-content: space-around;
@@ -31,6 +30,8 @@ table td {
 }
 
 table img {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
   width: 100px;
   height: auto;
   border-radius: 4px;
@@ -82,4 +83,85 @@ table:last-child .cart-column {
   width: 33% !important;
   margin-top: 90px;
   margin-right: 108px;
+}
+
+/* Alert Message */
+.modal {
+  visibility: hidden;
+  border-radius: 20px;
+  background-color: aqua;
+  width: 30%;
+  padding: 20px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  opacity: 0.9;
+}
+@keyframes fade_right {
+  0% {
+    transform: translateX(-90%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes close {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.tatThongBao {
+  position: absolute;
+  top: -20px;
+  cursor: pointer;
+  display: inline-flex;
+}
+.tatThongBao > button {
+  transition: all 0.4s linear;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #000000;
+  color: white;
+  font-size: 15px;
+  display: flex;
+}
+.tatThongBao > button > span {
+  white-space: nowrap;
+  display: flex;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+#alert-msg-descr {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  background-color: hsla(
+    var(--color-contrast-higher-h),
+    var(--color-contrast-higher-s),
+    var(--color-contrast-higher-l),
+    0.9
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: var(--space-xxs) var(--space-sm);
+  color: var(--color-bg);
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: 0.2s;
+}
+.tatThongBao:hover > button {
+  background-color: aliceblue;
+  color: #000000;
+}
+
+.text-md{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.color-contrast-medium {
+  margin-left: 50px;
 }
