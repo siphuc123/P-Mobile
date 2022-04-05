@@ -11,10 +11,12 @@
     <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
     <!-- CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/test.css">
     <!-- JScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
     <script type="text/javascript" src="js/asm.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>PS20362 _ Assignment</title>
@@ -35,8 +37,8 @@
             </div>
             <div id="menu" style="width: 66%;">
                 <ul>
-                    <li class="border"><a href="" class="active">Trang chủ</a></li>
-                    <li class="border"><a href="">Sản phẩm mới</a>
+                    <li id="border"><a href="" class="active">Trang chủ</a></li>
+                    <li id="border"><a href="">Sản phẩm mới</a>
                         <ul class="sub-menu ">
                             <li><a href="">Iphone</a>
                                 <ul>
@@ -63,11 +65,57 @@
                             <li><a href="" style="margin-left: 45%;">...</a></li>
                         </ul>
                     </li>
-                    <li class="border"><a href="">Thông tin hay</a></li>
-                    <li class="border"><a href="">Chăm sóc khách hàng</a></li>
-                    <li><a href="">Liên hệ</a></li>
+                    <li id="border"><a href="">Thông tin hay</a></li>
+                    <li id="border"><a href="">Chăm sóc khách hàng</a></li>
+                    <li><a href=""><label for="show" class="LH">Liên hệ</label></a></li>
                 </ul>
             </div>
+            <!--  begin liên hệ -->
+            <input type="checkbox" id="show">
+            <label class="lien_he" for="show" id="content">
+                <div class="modal__container">
+                    <label for="modal-input" class="close"><i class='bx bx-x'></i></label>
+                    <h3 class="title-modal">
+                        <i class='title-modal-icon bx bxs-phone-call'></i>
+                        Liên hệ
+                    </h3>
+                    <form class="modal-content">
+                        <div class="margin">
+                            <label class="modal-label" for="name">
+                                Họ và tên
+                                <input class="modal-input" required type="text" placeholder="Nhập tên đầy đủ..." name=""
+                                    id="name" style="height: 50px;">
+                            </label>
+                        </div class="margin">
+                        <div class="margin">
+                            <label class="modal-label" for="call">
+                                Điện thoại
+                                <input class="modal-input" required min="0" max="9" type="number"
+                                    placeholder="Nhập số điện thoại..." name="" id="call" style="height: 50px;">
+                            </label>
+                        </div>
+                        <div class="margin">
+                            <label class="modal-label" for="mail">
+                                Email
+                                <input class="modal-input" required type="text" placeholder="Nhập email..." name=""
+                                    id="mail" style="height: 50px;">
+                            </label class="modal-label">
+                        </div>
+                        <div class="margin">
+                            <label class="modal-label" for="note">
+                                Nội dung
+                                <textarea class="modal-input" required placeholder="Nhập nội dung liên hệ..." name=""
+                                    id="note" cols="30" rows="4"></textarea>
+                            </label>
+                        </div>
+                        <button class="modal-button">Gửi đi</button>
+                    </form>
+                </div>
+                </form>
+            </label>
+            <!--  end liên hệ -->
+
+            <!-- Thanh người dùng -->
             <div id="users">
                 <!-- Icon thanh tìm kiếm -->
                 <icon href=""><i class='bx bx-search-alt'></i>
@@ -88,7 +136,7 @@
                     <!-- Giỏ hàng -->
                     <div class="shopping_cart">
                         <div class="shopping_cart_detail">
-                            <h4>Giỏ Hàng của bạn 🛒</h4>
+                            <h4> | Giỏ Hàng của bạn 🛒 |</h4>
                             <b>Tổng tiền: <span id="shopping_cart_total">0</span> ₫</b>
                         </div>
                         <div id="shopping_cart_buying">
@@ -131,7 +179,7 @@
         </div>
         <!-- Sale,quảng cáo,... -->
         <a href="" class="quangcao-1"><img src="" alt=""></a>
-        <a href="" class="quangcao-1"><img src="img/hang/alert1.png" alt=""></a>
+        <a href="" class="quangcao-1 flex justify-center"><img src="img/hang/alert1.png" alt=""></a>
         </div>
         <!-- Thanh tiêu đề vào nội dung chính -->
         <div class="title">
@@ -150,7 +198,8 @@
                     <div class="small_sale">0 ngày 22:14</div>
                     <span class="product_sale" style="text-decoration: line-through;">33.990.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/1.png','iPhone 13 Pro Max',30490000,'A')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/1.png','iPhone 13 Pro Max',30490000,'A')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
@@ -163,7 +212,8 @@
                     <div class="small_sale">2 ngày 12:14</div>
                     <span class="product_sale" style="text-decoration: line-through;">16.990.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/4.png','iPhone 11',13490000,'B')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/4.png','iPhone 11',13490000,'B')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
@@ -176,7 +226,8 @@
                     <div class="small_sale">Trả góp chỉ từ</div>
                     <span class="product_sale"><b>3.110.000 ₫</b>/tháng</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/2.png','Samsung Galaxy S22 Ultra',30990000,'C')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/2.png','Samsung Galaxy S22 Ultra',30990000,'C')">
+                    Mua ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
@@ -189,7 +240,8 @@
                     <div class="small_sale">Trả góp chỉ từ</div>
                     <span class="product_sale"><b>1.411.000 ₫</b>/tháng</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/3.png','OPPO Reno7 Z 5G 8GB',10490000,'D')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/3.png','OPPO Reno7 Z 5G 8GB',10490000,'D')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
@@ -204,54 +256,59 @@
         <div class="product">
 
             <div class="sanPham" data-aos="fade-left">
-                <img src="img/moblie/1.png" alt="">
+                <img src="img/moblie/phukien1.png" alt="">
                 <hr>
-                <b class="product_name">iPhone 13 Pro Max</b>
+                <b class="product_name">Tai nghe Bluetooth AirPods Pro</b>
                 <div class="donGia">
-                    <span class="product_price">30.490.000 ₫</span>
-                    <div class="small_sale">0 ngày 22:14</div>
-                    <span class="product_sale" style="text-decoration: line-through;">33.990.000 ₫</span>
+                    <span class="product_price">4.890.000 ₫</span>
+                    <div class="small_sale">-27%</div>
+                    <span class="product_sale" style="text-decoration: line-through;">6.790.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/1.png','iPhone 13 Pro Max',30490000,'A')"> Mua ngay</button>
+                <button class="mua"
+                    onclick="themMatHang('img/moblie/phukien1.png','AirPods Pro MagSafe',4890000,'PK1')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
             <div class="sanPham" data-aos="fade-left">
-                <img src="img/moblie/4.png" alt="">
+                <img src="img/moblie/phukien2.png" alt="">
                 <hr>
-                <b class="product_name">iPhone 11</b>
+                <b class="product_name">Sạc Apple MHJE3</b>
                 <div class="donGia">
-                    <span class="product_price">13.490.000 ₫</span>
-                    <div class="small_sale">2 ngày 12:14</div>
-                    <span class="product_sale" style="text-decoration: line-through;">16.990.000 ₫</span>
+                    <span class="product_price">520.000 ₫</span>
+                    <div class="small_sale">-24%</div>
+                    <span class="product_sale" style="text-decoration: line-through;">690.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/4.png','iPhone 11',13490000,'B')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/phukien2.png','Sạc Apple MHJE3',520000,'PK2')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
             <div class="sanPham" data-aos="fade-left">
-                <img src="img/moblie/2.png" alt="">
+                <img src="img/moblie/phukien3.png" alt="">
                 <hr>
-                <b class="product_name">Samsung Galaxy S22 Ultra</b>
+                <b class="product_name">Ốp lưng MagSafe iPhone 13 Pro</b>
                 <div class="donGia">
-                    <span class="product_price">30.990.000 ₫</span>
-                    <div class="small_sale">Trả góp chỉ từ</div>
-                    <span class="product_sale"><b>3.110.000 ₫</b>/tháng</span>
+                    <span class="product_price">790.000 ₫</span>
+                    <div class="small_sale">-50%</div>
+                    <span class="product_sale" style="text-decoration: line-through;">1.590.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/2.png','Samsung Galaxy S22 Ultra',30990000,'C')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/phukien3.png','Ốp lưng xịn xò',790000,'PK3')"> Mua
+                    ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
             <div class="sanPham" data-aos="fade-left">
-                <img src="img/moblie/3.png" alt="">
+                <img src="img/moblie/phukien4.png" alt="">
                 <hr>
-                <b class="product_name">OPPO Reno7 Z 5G 8GB</b>
+                <b class="product_name">Xmobile LA Y615N</b>
                 <div class="donGia">
-                    <span class="product_price">10.490.000 ₫</span>
-                    <div class="small_sale">Trả góp chỉ từ</div>
-                    <span class="product_sale"><b>1.411.000 ₫</b>/tháng</span>
+                    <span class="product_price">474.000 ₫</span>
+                    <div class="small_sale">-40%</div>
+                    <span class="product_sale" style="text-decoration: line-through;">790.000 ₫</span>
                 </div>
-                <button class="mua" onclick="themMatHang('img/moblie/3.png','OPPO Reno7 Z 5G 8GB',10490000,'D')"> Mua ngay</button>
+                <button class="mua" onclick="themMatHang('img/moblie/phukien4.png','Xmobile LA Y615N',474000,'PK4')">
+                    Mua ngay</button>
                 <button class="Test"> So sánh</button>
             </div>
 
@@ -261,16 +318,16 @@
     <div class="modal">
         <div class="tatThongBao">
             <button onclick="dongCuaSo()"><span>Close</span>
-            <i class='bx bx-x bx-sm'></i>
+                <i class='bx bx-x bx-sm'></i>
             </button>
         </div>
         <div class="width-100% max-width-xxxs padding-sm bg radius-md shadow-md overflow-auto">
             <div class="text-component text-sm">
-              <h2 id="alert-msg-title" class="text-md">Thông báo ❗❗</h2>
-              <p id="alert-msg-descr" class="color-contrast-medium">Sản phẩm này đã có trong giỏ hàng rồi.</p>
+                <h2 id="alert-msg-title" class="text-md"> Thông báo ❗❗</h2>
+                <p id="alert-msg-descr" class="color-contrast-medium">Sản phẩm này đã có trong giỏ hàng rồi.</p>
             </div>
-          </div>
         </div>
+    </div>
     </div>
     <!-- Ghi chú sale -->
     <div class="box-ghi-chu">

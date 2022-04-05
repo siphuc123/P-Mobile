@@ -34,21 +34,21 @@ table img {
     0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
   width: 100px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 200rem;
 }
 
 .Xoa {
   margin-right: -50px;
   padding: 10px;
-  color: white;
-  background-color: #eb5757;
+  color: black;
+  background-color: whitesmoke;
   border: none;
   border-radius: 0.3em;
   font-weight: bold;
   cursor: pointer;
 }
 .Xoa:hover {
-  background-color: #f18c5d;
+  color: #c00;
 }
 
 .soLuong {
@@ -87,13 +87,14 @@ table:last-child .cart-column {
 
 /* Alert Message */
 .modal {
+  color: white;
   visibility: hidden;
   border-radius: 20px;
-  background-color: aqua;
+  background-color: black;
   width: 30%;
   padding: 20px;
   position: fixed;
-  bottom: 10px;
+  top: 120px;
   left: 10px;
   opacity: 0.9;
 }
@@ -106,11 +107,11 @@ table:last-child .cart-column {
   }
 }
 @keyframes close {
-  0% {
+  0%{
     transform: translateX(0%);
   }
-  100% {
-    transform: translateX(-100%);
+  50% {
+    transform: translateX(60%);
   }
 }
 .tatThongBao {
@@ -123,10 +124,11 @@ table:last-child .cart-column {
   transition: all 0.4s linear;
   border-radius: 5px;
   padding: 5px;
-  background-color: #000000;
-  color: white;
+  background-color: white;
+  color: #000000c4;
   font-size: 15px;
   display: flex;
+  font-weight: bold;
 }
 .tatThongBao > button > span {
   white-space: nowrap;
@@ -154,8 +156,9 @@ table:last-child .cart-column {
   transition: 0.2s;
 }
 .tatThongBao:hover > button {
-  background-color: aliceblue;
-  color: #000000;
+  background-color: black;
+  color: aliceblue;
+  border: whitesmoke 2px solid;
 }
 
 .text-md{
@@ -165,3 +168,115 @@ table:last-child .cart-column {
 .color-contrast-medium {
   margin-left: 50px;
 }
+
+/* ---------------liên hệ------------------ */
+.lien_he{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  display: "";
+}
+
+.modal__container{
+  background-color: #fff;
+  width: 50%;
+  max-height: 1100px;
+  border-radius: 10px;
+  z-index: 4;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  animation: modalFaceIn ease 0.5s;
+}
+.lien_he .title-modal{
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 70px;
+  background-color: #c00;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.title-modal-icon{
+  margin-right: 8px;
+}
+.lien_he .close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  padding: 8px;
+  font-size: 24px;
+  color: #fff;
+}
+.modal-content{
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.modal-label{
+  font-size: 18px;
+  font-weight: 600;    
+  position: relative;
+}
+.modal-input{
+  width: 100%;
+  outline: none;
+  border: 1px solid #eee;
+  padding: 12px 0;
+  padding-left: 12px;
+  margin: 6px 0px;
+  border-radius: 10px;
+  font-style: italic;
+  background: #eee;
+  box-sizing: border-box;
+  transition: .3s linear;
+}
+.modal-input:focus{
+  background-color: #fff;
+  box-shadow: 0 0 20px #ccc;
+}
+.modal-button{
+  margin: 4px 0px 4px;
+  width: 100%;
+  line-height: 48px;
+  color: #fff;
+  font-size: 20px;
+  background-color: #cc0000;
+  border-radius: 10px;
+}
+.modal-button:hover{
+  opacity: .7;
+}
+.margin{
+  margin: 16px 0;
+}
+.modal-input:checked ~ .modal,
+.modal-input:checked ~ .modal__container{
+  display: block;
+} 
+@keyframes modalFaceIn{
+  from{
+       opacity: 0;
+       transform: translate(-50%, -80%);
+  }
+  to{
+       opacity: 1;
+       transform: translate(-50%, -50%);
+  }
+}
+
+/* hiển thị liên hệ */
+#show,#content{display:none;}
+#show:checked~#content{display:block;}
+.LH {cursor: pointer;}
