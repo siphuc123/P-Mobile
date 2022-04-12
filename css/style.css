@@ -116,7 +116,7 @@
   font-family: "Helvetica, sans-serif";
 }
 /* thanh thông báo nhỏ ở trên cùng */
-.alert {
+.thong_bao {
   background-color: #6a5af9;
   color: wheat;
   font-weight: bold;
@@ -208,7 +208,7 @@ ul li ul.sub-menu {
   background-color: white;
   display: block !important;
   position: absolute;
-  top: 180%;
+  top: 170%;
 }
 .sub-menu a {
   color: black;
@@ -518,14 +518,11 @@ button:hover {
 }
 /* GHI CHÚ */
 .box-ghi-chu {
-  background: url("https://png.pngtree.com/background/20210711/original/pngtree-mobile-phone-digital-poster-banner-background-material-picture-image_1101575.jpg");
-  background-size: cover;
-  background-position: 100% -180px;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
   padding: 15px;
-  margin: 10px auto;
+  margin: 55px auto;
   color: white;
 }
 .box-ghi-chu .icon {
@@ -558,4 +555,13 @@ footer {
 /* footer */
 footer > b {
   color: aqua;
+}
+
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
 }
