@@ -88,6 +88,7 @@ function themMatHang(hinh, ten, gia, loai) {
   }
   // Nếu có thì thêm mặt hàng vào giỏ hàng
   if (check == true) {
+     alert("Đã thêm vào giỏ hàng !")
     ItemsArr.push(new Items(hinh, ten, gia, loai));
     document.querySelector(".count").innerHTML++;
   } else {

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/test.css">
     <!-- JScript -->
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <script src="sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="js/asm.js"></script>
     <script type="text/javascript" src="js/checkError.js"></script>
@@ -113,7 +113,7 @@
                                 Họ và tên </label>
                             <input id="fullname" name="Name" class="form-control modal-input" required type="text"
                                 placeholder="VD: Trọng Phúc" style="height: 50px;" ng-model="name">
-                            <em ng-If="frm.Name.$touched && frm.Name.$invalid ">Tên không hợp lệ !</em>
+                            <em ng-if="frm.Name.$touched && frm.Name.$invalid ">Tên không hợp lệ !</em>
                         </div>
 
                         <div class="form-group">
@@ -121,7 +121,7 @@
                                 Điện thoại </label>
                             <input class="form-control modal-input" required min="1" type="number" ng-model="call"
                                 placeholder="Nhập số điện thoại..." name="call" id="call" style="height: 50px;">
-                            <em ng-If="frm.call.$touched || call == NULL ">SDT không hợp lệ !</em>
+                            <em ng-If="frm.call.$touched && frm.call.$invalid ">SDT không hợp lệ !</em>
                         </div>
 
                         <div class="form-group">
@@ -137,10 +137,9 @@
                             <textarea class="form-control modal-input" required placeholder="Nhập nội dung liên hệ..."
                                 name="note" id="note" cols="30" rows="4" ng-model="note"></textarea>
 
-                            <em ng-if="frm.Name.$touched && frm.note.$invalid ">Nội dung không hợp lệ !</em>
+                            <em ng-if="frm.note.$touched && frm.note.$invalid ">Nội dung không hợp lệ !</em>
                         </div>
-                        <button class="form-submit modal-button" id="submit">Gửi
-                            đi</button>
+                        <button class="form-submit modal-button" id="submit" onclick="submit();"> Gửi đi</button>
                         <h3 hidden>Thành công ! Cảm ơn bạn đã góp ý</h3>
                     </form>
                 </div>
@@ -398,6 +397,43 @@
 
     <!-- Chức năng phụ trợ -->
     <a href="#top" id="TOP" data-aos="zoom-in-up"><i class='bx bxs-caret-up-square'></i></a>
+    <script>
+        // Angular
+        app = angular.module("asm", []);
+        app.controller("ctr", work);
+        function work($scope) { }
+        // Jquery
+        $("#submit").click(function () {
+            var name = $("#fullname").val();
+            var SDT = $("#call").val();
+            var NoiDung = $("#note").val();
+            var Email = $("#email").val();
+            // alert(name);
+            if (name == "" || SDT == "" || NoiDung == "" || Email == "") {
+                // alert("Hãy điền đầy đủ thông tin !");
+                document.getElementById("content").style.display = "none";
+                Swal.fire({
+                    padding: 1,
+                    confirmButtonText:'OK',
+                    toast: false,
+                    icon: "error",
+                    title: "Nhập sai hoặc không đủ dữ liệu !",
+                    showConfirmButton: true,
+                });
+            } else {
+                document.getElementById("content").style.display = "none";
+                Swal.fire({
+                    padding: 1,
+                    confirmButtonText:'OK',
+                    toast: false,
+                    icon: "success",
+                    title: "Cảm ơn bạn đã góp ý !",
+                    showConfirmButton: true,
+                });
+                // alert('Chúc mừng bạn đã nhập đúng yêu cầu ! tôi là Trọng Phúc , chúc bạn một ngày tốt lành.')
+            }
+        });
+    </script>
     <script>
         AOS.init();
     </script>
