@@ -1,3 +1,3 @@
-# Web1042_JS
+# Practice HTML, CSS, JS
 
-Tập tành làm javascript làm web :'(
+- Learning a lot of JavaScript and also improving my HTML and CSS a bit 👍
